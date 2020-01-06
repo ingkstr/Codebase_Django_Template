@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  django: &django
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfiles/production/django
+    image: real_system
+    env_file:
+      - ./.envs/.production/.sys
+    ports:
+      - "80:80"
+    command: /start

@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  django: &django
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfiles/local/django
+    image: mydev
+    env_file:
+      - ./.envs/.local/.sys
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    command: /start

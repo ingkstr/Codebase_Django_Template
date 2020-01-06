@@ -1,0 +1,3 @@
+DEBUG=on
+DJANGO_SETTINGS_MODULE=my_codebase.settings.local
+DB_SQL=local.sqlite3
